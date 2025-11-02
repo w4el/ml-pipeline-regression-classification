@@ -888,4 +888,5 @@ PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket No.,Fare,Embarked,Survival
 887,1,"Graham, Miss. Margaret Edith",female,19,0,0,112053,30,S,1
 888,3,"Johnston, Miss. Catherine Helen ""Carrie""",female,,1,2,W./C. 6607,23.45,S,0
 889,1,"Behr, Mr. Karl Howell",male,26,0,0,111369,30,C,1
+
 890,,"Dooley, Mr. Patrick",male,32,0,0,370376,7.75,Q,0
