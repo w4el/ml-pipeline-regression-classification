@@ -1,28 +1,38 @@
 # End-to-End Machine Learning Pipelines
 
-> This project demonstrates the implementation of complete machine learning workflows for both regression and classification tasks.
+> A project demonstrating the implementation of complete, robust, and reproducible machine learning workflows for both regression and classification tasks.
 > * **Regression Task:** Predicting California housing prices.
 > * **Classification Task:** Predicting passenger survival on the Titanic.
 
-The core of this project is building robust, reproducible pre-processing and modelling pipelines using Scikit-learn, from raw data ingestion to final model evaluation and tuning.
+The core focus of this project is not just model training, but building a systematic and reusable end-to-end pipeline, from raw data ingestion and cleaning to final model evaluation and hyperparameter tuning.
 
-## 1. Key Features
+## 1. Key Features & Technical Implementation
 
-* **Full Pre-processing Pipeline:** Uses Scikit-learn's `Pipeline` and `ColumnTransformer` to systematically handle missing values (`SimpleImputer`), scale numerical data (`StandardScaler`), and encode categorical data (`OneHotEncoder`).
-* **Model Implementation & Comparison:**
-    * **Regression:** Implements and compares Linear Regression, Decision Tree Regression, and Random Forest Regression.
-    * **Classification:** Implements and compares Logistic Regression, Random Forest Classifier, and Gradient Boosting Classifier.
-* **Systematic Hyperparameter Tuning:** Employs `GridSearchCV` to exhaustively search parameter grids and find the optimal hyperparameters for the best-performing models.
-* **Robust Evaluation:**
-    * Regression models are evaluated using Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R² score.
-    * Classification models are evaluated using Accuracy, Precision, Recall, and F1-Score.
+This project is built almost entirely using Scikit-learn, Pandas, and Matplotlib, demonstrating a mastery of the core data science stack.
+
+### Advanced Pre-processing Pipeline
+A single, robust pre-processing pipeline was constructed using Scikit-learn's `Pipeline` and `ColumnTransformer`. This pipeline automatically applies the correct transformations to the correct data types:
+* **Missing Values:** `SimpleImputer` is used to fill in missing data (e.g., `total_bedrooms`).
+* **Numerical Features:** `StandardScaler` is applied to all numerical data to normalise its range.
+* **Categorical Features:** `OneHotEncoder` is used to convert categorical data into a machine-readable format.
+
+### Regression Task (California Housing)
+* **Models Implemented:** Linear Regression, Decision Tree Regression, and **Random Forest Regression**.
+* **Evaluation Metrics:** Models were rigorously evaluated using Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R² score.
+* **Tuning:** `GridSearchCV` was employed to systematically find the optimal hyperparameters for the Random Forest model.
+
+### Classification Task (Titanic Survival)
+* **Models Implemented:** Logistic Regression, **Random Forest Classifier**, and **Gradient Boosting Classifier**.
+* **Evaluation Metrics:** Due to the nature of the survival dataset, models were evaluated using a full suite of metrics: Accuracy, Precision, Recall, and **F1-Score**.
+* **Tuning:** `GridSearchCV` was again used to tune the ensemble models for maximum predictive accuracy.
 
 ## 2. Technologies & Libraries Used
 
-* **Core:** Python, Jupyter Notebook
-* **Data Science:** Scikit-learn (for all pipelines, models, and metrics)
+* **Core:** Python
 * **Data Manipulation:** Pandas, NumPy
+* **ML Pipeline & Modelling:** Scikit-learn (extensively used for `Pipeline`, `ColumnTransformer`, `GridSearchCV`, and all models)
 * **Data Visualisation:** Matplotlib, Seaborn
+* **Environment:** Jupyter Notebook
 
 ## 3. Installation & Usage
 
@@ -30,10 +40,10 @@ The core of this project is building robust, reproducible pre-processing and mod
     `git clone https://github.com/w4el/ml-pipeline-regression-classification.git`
 2.  Navigate to the project directory:
     `cd ml-pipeline-regression-classification`
-3.  Install the required dependencies (you must create this `requirements.txt` file):
+3.  Install the required dependencies from the `requirements.txt` file:
     `pip install -r requirements.txt`
 
-The entire analysis, from pre-processing to model tuning and evaluation, is contained in the Jupyter Notebook.
+The entire analysis—from data loading, pipeline construction, model training, and evaluation—is contained within the Jupyter Notebook.
 1.  Launch Jupyter:
     `jupyter notebook`
-2.  Open the `COMP1816_CW_Code_Notebook.ipynb` file and run all cells.
+2.  Open the `ml-pipeline-regression-classification.ipynb` file and run all cells to replicate the results.
